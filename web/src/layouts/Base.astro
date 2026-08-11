@@ -1,0 +1,47 @@
+---
+import '@fontsource/barlow/400.css';
+import '@fontsource/barlow/600.css';
+import '@fontsource/barlow-condensed/600-italic.css';
+import '@fontsource/barlow-condensed/700-italic.css';
+import '../styles/global.css';
+
+interface Props {
+  titulo?: string;
+  descripcion?: string;
+}
+const {
+  titulo = 'Equipo Tierra y la invasión silenciosa — Eva Martín',
+  descripcion = 'A las 9:30 de la mañana, todos los móviles del planeta reciben el mismo mensaje de socorro. Novela juvenil de aventuras y humor (11–15 años).',
+} = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titulo}</title>
+    <meta name="description" content={descripcion} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content={titulo} />
+    <meta property="og:description" content={descripcion} />
+    <meta property="og:image" content="/img/portada.jpg" />
+    <meta property="og:type" content="book" />
+  </head>
+  <body>
+    <slot />
+    <footer>
+      <div class="contenedor">
+        <p>
+          ¿Me escribes y me cuentas qué te ha parecido?
+          <a href="mailto:hola@equipotierra.com">hola@equipotierra.com</a> — leo todos los correos.
+        </p>
+        <nav>
+          <span>© 2026 Eva Martín</span>
+          <a href="/aviso-legal/">Aviso legal</a>
+          <a href="/privacidad/">Privacidad</a>
+          <a href="/blog/">Blog</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

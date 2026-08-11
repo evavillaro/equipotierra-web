@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const entradas = (await getCollection('blog', ({ data }) => !data.borrador))
+  .sort((a, b) => b.data.fecha.valueOf() - a.data.fecha.valueOf());
+---
+<Base titulo="Bitácora — Equipo Tierra">
+  <div class="pagina">
+    <div class="contenedor">
+      <a class="volver" href="/">← Volver a la base</a>
+      <h1>Bitácora del Equipo Tierra</h1>
+      {entradas.length === 0 ? (
+        <p>
+          Los cinco están ocupados salvando el planeta y todavía no han escrito
+          nada aquí. Vuelve pronto — o sigue a la autora en Amazon para
+          enterarte de las novedades.
+        </p>
+      ) : (
+        <ul style="list-style: none; padding: 0;">
+          {entradas.map((e) => (
+            <li style="margin-bottom: 1.2rem;">
+              <a href={`/blog/${e.id}/`} style="font-size: 1.3rem;">{e.data.titulo}</a>
+              <div style="color: var(--hueso-70); font-size: 0.9rem;">
+                {e.data.fecha.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </div>
+</Base>

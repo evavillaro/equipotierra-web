@@ -1,0 +1,96 @@
+---
+import Base from '../layouts/Base.astro';
+
+// ─── EDITA AQUÍ cuando el libro esté publicado ────────────────────────────
+const AMAZON_PAPEL = '#';   // TODO: enlace a la edición en tapa blanda
+const AMAZON_KINDLE = '#';  // TODO: enlace a la edición Kindle
+const AMAZON_AUTORA = '#';  // TODO: enlace a la página de autora (Author Central)
+// ──────────────────────────────────────────────────────────────────────────
+---
+<Base>
+  <section class="hero">
+    <div class="contenedor hero-grid">
+      <img
+        class="hero-libro"
+        src="/img/portada.jpg"
+        alt="Cubierta de Equipo Tierra y la invasión silenciosa"
+        width="900"
+        height="1391"
+      />
+      <div class="hero-texto">
+        <h1 class="hero-titulo">
+          <span class="linea1">Equipo</span>
+          <span class="linea2">Tierra</span>
+          <span class="subtitulo">y la invasión silenciosa</span>
+        </h1>
+        <p class="gancho">
+          A las <strong>9:30 de la mañana</strong>, todos los móviles del planeta
+          reciben el mismo mensaje de socorro.
+        </p>
+        <div class="botonera">
+          <a class="neon" href={AMAZON_PAPEL}>Cómpralo en papel</a>
+          <a class="neon dorado" href={AMAZON_KINDLE}>Léelo en Kindle</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion sinopsis">
+    <div class="contenedor">
+      <h2>La historia</h2>
+      <p>
+        El mensaje procede de <strong>LikeOn</strong>, un planeta alienígena.
+      </p>
+      <p>
+        Sara, Eva, Gabriel, Robert y María viven a miles de kilómetros de
+        distancia y no tienen ningún motivo para conocerse. Hasta que descubren
+        que, entre todos los habitantes de la Tierra, han sido ellos los
+        elegidos para ayudar a los likeonianos.
+      </p>
+      <div class="fichas">
+        <div class="ficha">
+          <img src="/img/icono-ojo.png" alt="" width="84" height="83" />
+          <div>
+            <h3>¿La misión?</h3>
+            <p>
+              Representar a LikeOn en unos Juegos Olímpicos Intergalácticos
+              basados en los cinco sentidos: vista, oído, tacto, gusto y olfato.
+            </p>
+          </div>
+        </div>
+        <div class="ficha">
+          <img src="/img/icono-huella.png" alt="" width="84" height="86" />
+          <div>
+            <h3>¿El rival?</h3>
+            <p>
+              Una civilización que lleva siglos saliéndose con la suya sin que
+              nadie se dé cuenta.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p class="destacado" style="margin-top: 2.2rem;">
+        Y lo que está en juego es bastante más que una medalla.
+      </p>
+      <p style="color: var(--hueso-70);">
+        Novela de aventuras y humor para lectores de 11 a 15 años
+        (y para cualquiera que mire al cielo con curiosidad).
+      </p>
+    </div>
+  </section>
+
+  <section class="seccion autora">
+    <div class="contenedor">
+      <h2>La autora</h2>
+      <p>
+        <strong>Eva Martín</strong> es ingeniera y emprendedora tecnológica.
+        <em>Equipo Tierra y la invasión silenciosa</em> es su primera novela.
+      </p>
+      <p>
+        ¿Quieres saber cuándo vuelve el Equipo Tierra? Sigue a Eva en Amazon y
+        te avisarán de los próximos libros.
+      </p>
+      <a class="neon" href={AMAZON_AUTORA}>Sigue a Eva Martín en Amazon</a>
+    </div>
+  </section>
+</Base>

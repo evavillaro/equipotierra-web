@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entradas = await getCollection('blog', ({ data }) => !data.borrador);
+  return entradas.map((e) => ({ params: { id: e.id }, props: { entrada: e } }));
+}
+const { entrada } = Astro.props;
+const { Content } = await render(entrada);
+---
+<Base titulo={`${entrada.data.titulo} — Equipo Tierra`}>
+  <div class="pagina">
+    <div class="contenedor">
+      <a class="volver" href="/blog/">← Bitácora</a>
+      <h1>{entrada.data.titulo}</h1>
+      <Content />
+    </div>
+  </div>
+</Base>
