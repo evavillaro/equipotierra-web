@@ -167,6 +167,21 @@ a { color: var(--cristal); }
   .botonera { justify-content: center; }
 }
 
+/* ---- vídeo ---- */
+.video-marco {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radio);
+  border: 1px solid rgba(127, 184, 255, 0.35);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 60px rgba(127, 184, 255, 0.28);
+}
+.video-marco video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
 /* ---- sinopsis ---- */
 .sinopsis p { max-width: 62ch; }
 .destacado {
