@@ -8,9 +8,8 @@ npm install
 npm run dev        # abre http://localhost:4321
 ```
 
-## Cosas que editar tú (marcadas con TODO)
-- `src/pages/index.astro` → las tres constantes de arriba: enlaces de Amazon
-  (papel, Kindle) y de tu página de autora, cuando el libro esté publicado.
+## Enlaces de Amazon
+Están al principio de `src/pages/index.astro`: papel, Kindle y página de autora.
 
 ## Publicar una entrada del blog
 Crea un archivo `.md` en `src/content/blog/` copiando el formato de
