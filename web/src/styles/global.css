@@ -218,6 +218,11 @@ a { color: var(--cristal); }
 /* ---- autora ---- */
 .autora p { max-width: 60ch; }
 
+/* ---- gracias / reseña ---- */
+.gracias p { max-width: 60ch; }
+.gracias .botonera { margin: 1.8rem 0 1.1rem; }
+.gracias-cierre { color: var(--hueso-70); }
+
 /* ---- pie ---- */
 footer {
   border-top: 1px solid rgba(127, 184, 255, 0.14);

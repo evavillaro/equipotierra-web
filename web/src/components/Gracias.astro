@@ -1,0 +1,24 @@
+---
+interface Props {
+  tituloTag?: 'h1' | 'h2';
+}
+const { tituloTag: Titulo = 'h2' } = Astro.props;
+
+const RESENA = 'https://www.amazon.es/review/create-review?asin=B0HDQL33SC';
+---
+<Titulo>Gracias por leerlo</Titulo>
+<p>
+  Si has llegado al final de <em>Equipo Tierra y la invasión silenciosa</em>,
+  gracias de verdad. Espero que hayas disfrutado la historia tanto como yo
+  escribiéndola.
+</p>
+<p>
+  Ahora hay dos cosas que ayudan muchísimo: dejar una reseña y recomendárselo
+  a alguien. Parecen poca cosa y no lo son: son lo que hace que el libro
+  llegue a otros lectores.
+</p>
+<div class="botonera">
+  <a class="neon" href={RESENA} rel="noopener noreferrer">Dejar una reseña en Amazon</a>
+  <a class="neon dorado" href="mailto:hola@equipotierra.com">Escríbeme: hola@equipotierra.com</a>
+</div>
+<p class="gracias-cierre">Leo todos los correos.</p>
