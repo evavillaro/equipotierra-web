@@ -240,6 +240,12 @@ footer a:hover { color: var(--cristal); }
 .pagina .contenedor > p, .pagina li { max-width: 68ch; color: var(--hueso-70); }
 .volver { display: inline-block; margin-bottom: 2rem; }
 
+/* ---- colegios / escoles ---- */
+.pagina .fichas-contacto { margin-top: 2.8rem; }
+.fichas-contacto .ficha { grid-template-columns: 1fr; }
+.fichas-contacto .ficha p { max-width: none; }
+.idioma-alt { margin-top: 1rem; font-size: 0.95rem; color: var(--hueso-70); }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .neon { transition: none; }

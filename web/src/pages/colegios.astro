@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+
+const EMAIL = 'hola@equipotierra.com';
+const ASUNTO = 'Colegio o librería — Equipo Tierra';
+const CONTACTO = `mailto:${EMAIL}?subject=${encodeURIComponent(ASUNTO)}`;
+const PDF_CHARLA = '/charla-colegios-equipo-tierra.pdf';
+---
+<Base
+  titulo="Colegios y librerías — Equipo Tierra"
+  descripcion="Charla de autora gratuita en colegios y disponibilidad del libro para librerías. Eva Martín lleva Equipo Tierra y la invasión silenciosa a las aulas."
+>
+  <div class="pagina">
+    <div class="contenedor">
+      <a class="volver" href="/">← Volver a la base</a>
+      <h1>Colegios y librerías</h1>
+      <p>
+        Llevo <em>Equipo Tierra y la invasión silenciosa</em> a las aulas con una
+        charla gratuita, y el libro está disponible para librerías a través de
+        distribución. Escríbeme y lo organizamos.
+      </p>
+      <div class="botonera">
+        <a class="neon" href={CONTACTO}>Contactar</a>
+      </div>
+
+      <div class="fichas fichas-contacto">
+        <div class="ficha">
+          <div>
+            <h3>Para colegios</h3>
+            <p>
+              Charla de autora de 50 minutos, gratuita y sin mínimos de compra,
+              para 6º de primaria a 2º de ESO (a partir de 11 años). Solo hace
+              falta un proyector o un altavoz en el aula.
+            </p>
+            <p>
+              Hablo de lanzarse, equivocarse y seguir intentándolo en equipo:
+              las similitudes entre montar una startup y escribir una novela.
+            </p>
+            <a href={PDF_CHARLA} target="_blank" rel="noopener noreferrer">Descargar el dosier en PDF →</a>
+          </div>
+        </div>
+        <div class="ficha">
+          <div>
+            <h3>Para librerías</h3>
+            <p>
+              <em>Equipo Tierra y la invasión silenciosa</em> se distribuye a
+              través de Azeta y también está disponible en Amazon. Tapa blanda,
+              230 páginas, 12,95 €. ISBN 978-84-09-90468-6.
+            </p>
+            <p>
+              Si quieres organizar una presentación o una firma de libros,
+              también podemos hablarlo.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p class="destacado" style="margin-top: 2.2rem;">
+        Escríbeme a <a href={`mailto:${EMAIL}`}>{EMAIL}</a> y te cuento fechas
+        disponibles. Leo todos los correos.
+      </p>
+      <p class="idioma-alt"><a href="/escoles/">Aquesta pàgina també en català →</a></p>
+    </div>
+  </div>
+</Base>

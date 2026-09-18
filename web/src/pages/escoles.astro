@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+
+const EMAIL = 'hola@equipotierra.com';
+const ASUNTO = 'Escola o llibreria — Equipo Tierra';
+const CONTACTO = `mailto:${EMAIL}?subject=${encodeURIComponent(ASUNTO)}`;
+const PDF_XERRADA = '/xerrada-escoles-equipo-tierra.pdf';
+---
+<Base
+  titulo="Escoles i llibreries — Equipo Tierra"
+  descripcion="Xerrada d'autora gratuïta a escoles i disponibilitat del llibre per a llibreries. Eva Martín porta Equipo Tierra y la invasión silenciosa a les aules."
+  lang="ca"
+>
+  <div class="pagina">
+    <div class="contenedor">
+      <a class="volver" href="/">← Tornar a la base</a>
+      <h1>Escoles i llibreries</h1>
+      <p>
+        Porto <em>Equipo Tierra y la invasión silenciosa</em> a les aules amb
+        una xerrada gratuïta, i el llibre està disponible per a llibreries a
+        través de distribució. Escriu-me i ho organitzem.
+      </p>
+      <div class="botonera">
+        <a class="neon" href={CONTACTO}>Contactar</a>
+      </div>
+
+      <div class="fichas fichas-contacto">
+        <div class="ficha">
+          <div>
+            <h3>Per a escoles</h3>
+            <p>
+              Xerrada d'autora de 50 minuts, gratuïta i sense mínims de compra,
+              per a 6è de primària a 2n d'ESO (a partir d'11 anys). Només cal
+              un projector o un altaveu a l'aula.
+            </p>
+            <p>
+              Parlo de llançar-se, equivocar-se i continuar provant en equip:
+              les similituds entre crear una startup i escriure una novel·la.
+            </p>
+            <a href={PDF_XERRADA} target="_blank" rel="noopener noreferrer">Descarregar el dossier en PDF →</a>
+          </div>
+        </div>
+        <div class="ficha">
+          <div>
+            <h3>Per a llibreries</h3>
+            <p>
+              <em>Equipo Tierra y la invasión silenciosa</em> es distribueix a
+              través d'Azeta i també està disponible a Amazon. Tapa tova, 230
+              pàgines, 12,95 €. ISBN 978-84-09-90468-6.
+            </p>
+            <p>
+              Si vols organitzar una presentació o una signatura de llibres,
+              també ho podem parlar.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p class="destacado" style="margin-top: 2.2rem;">
+        Escriu-me a <a href={`mailto:${EMAIL}`}>{EMAIL}</a> i et dic dates
+        disponibles. Llegeixo tots els correus.
+      </p>
+      <p class="idioma-alt"><a href="/colegios/">Esta página también en español →</a></p>
+    </div>
+  </div>
+</Base>

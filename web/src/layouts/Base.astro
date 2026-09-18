@@ -8,14 +8,16 @@ import '../styles/global.css';
 interface Props {
   titulo?: string;
   descripcion?: string;
+  lang?: string;
 }
 const {
   titulo = 'Equipo Tierra y la invasión silenciosa — Eva Martín',
   descripcion = 'A las 9:30 de la mañana, todos los móviles del planeta reciben el mismo mensaje de socorro. Novela juvenil de aventuras y humor (11–15 años).',
+  lang = 'es',
 } = Astro.props;
 ---
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -40,6 +42,7 @@ const {
           <a href="/aviso-legal/">Aviso legal</a>
           <a href="/privacidad/">Privacidad</a>
           <a href="/blog/">Blog</a>
+          <a href="/colegios/">Colegios y librerías</a>
         </nav>
       </div>
     </footer>
