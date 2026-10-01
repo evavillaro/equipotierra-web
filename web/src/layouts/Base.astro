@@ -10,6 +10,8 @@ interface Props {
   descripcion?: string;
   lang?: string;
 }
+// Píxel de Meta: mide visitas desde anuncios y clics de compra en Amazon.
+const PIXEL = '1431144915623956';
 const {
   titulo = 'Equipo Tierra y la invasión silenciosa — Eva Martín',
   descripcion = 'A las 9:30 de la mañana, todos los móviles del planeta reciben el mismo mensaje de socorro. Novela juvenil de aventuras y humor (11–15 años).',
@@ -46,5 +48,17 @@ const {
         </nav>
       </div>
     </footer>
+    <script is:inline define:vars={{ PIXEL }}>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', PIXEL);
+      fbq('track', 'PageView');
+      // Intención de compra: enlaces a la ficha del libro en Amazon (/dp/), no reseñas ni la página de autora.
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a');
+        if (!a || !/amazon\.[a-z.]+\/(.*\/)?dp\//.test(a.href)) return;
+        fbq('track', 'InitiateCheckout', { content_name: /ebook/.test(a.href) ? 'Kindle' : 'Papel' });
+        if (a.target !== '_blank') { e.preventDefault(); setTimeout(function () { location.href = a.href; }, 300); }
+      });
+    </script>
   </body>
 </html>
